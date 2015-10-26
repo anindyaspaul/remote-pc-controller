@@ -2,3 +2,9 @@
 \contentsline {section}{\numberline {2}Motivation}{1}
 \contentsline {section}{\numberline {3}Project Details}{1}
 \contentsline {subsection}{\numberline {3.1}Members of the Team}{1}
+\contentsline {subsection}{\numberline {3.2}Design}{2}
+\contentsline {subsubsection}{\numberline {3.2.1}Workflow Diagram}{2}
+\contentsline {subsubsection}{\numberline {3.2.2}User Interface}{2}
+\contentsline {subsection}{\numberline {3.3}Use Case Diagram}{3}
+\contentsline {section}{\numberline {4}Our Goal}{3}
+\contentsline {section}{\numberline {5}Conclusion}{3}
