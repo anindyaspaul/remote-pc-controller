@@ -1,9 +1,12 @@
 \documentclass{article}
+
+%\usepackage{pdfpages}
+
 \usepackage[utf8]{inputenc}
 
 \begin{titlepage}
 
- 
+
 \title{Remote PC controller}
 \author{Anindya Sundor Paul \\ Mehedi Hasan \\ S. M. Ariful Hoque \\ Fahad Chowdhury \\ Arafat Ahmed}
 \date{ }
@@ -23,7 +26,7 @@
  
 \section{Introduction}
 
-The project we will be working on is remote pc controller. The main idea of this project is to control a computer remotely by another computer. The computers will be connected through LAN. We have to send signals to control the functions of mouse and keyboard. \\
+The project we will be working on is remote PC controller. The main idea of this project is to control a computer remotely by another computer. The computers will be connected through LAN. We have to send signals to control the functions of mouse and keyboard. \\
 
 \section{Motivation}
 
@@ -54,16 +57,17 @@ Although the job is divided among all the members of the team, it is very much p
 \subsubsection{Workflow Diagram}
 
 This is the workflow diagram of our project.\\ \\
+%\includepdf[pages=-]{remote-pc-controller-workflow.pdf}
 %here goes the pdf
 After starting the program, the user may act as controlled or controller. If the user wants to connect to remote PC and control it, he/she has to enter the IP and password provided by the remote PC. After entering valid IP and password the controller will send a request in order to have control. After accepting the request, the controller will have control of the remote PC. The remote PC user will also have access to his computer and may terminate at any point. After connecting to the remote PC, the controller will do his job and then terminate the program. \\
 If the user wants his PC to be controlled, he/she will have to give his/her IP and password to the controller. This is a password generated for this sole program, not the master password. After getting the password and IP, the controller will send a request. If the remote PC user do not accept the request, the connection will not be made. If he/she accepts it, the controller will have control over the remote PC. The remote PC user may terminate the program at any moment.\\
 
 \subsubsection{User Interface}
 
-We have tried our best to come up with a design so that the user can use the program very easily. Here is the design.\\ \\ 
+We have tried our best to come up with a UI design so that the user can use the program very easily. Here is the design.\\ \\ 
 %Goes the pdf
 %Allow remote control
-This window will appear at the start of the program. The Allow Remote Control part of the window will show the host PC its IP address and a randomly generated password. If the user likes to allow remote control, he/she will provide these information to the controller. \\
+This window will appear at the start of the program. The Allow Remote Control part of the window will show the host PC, its IP address and a randomly generated password. If the user likes to allow remote control, he/she will provide these information to the controller. \\
 Control Remote PC part of the window will contain two dialog boxes to put the partner's IP and password. The controller will put the informations and send a request. If the remote PC user accepts the requests, then the connection will be built. 
 %Incoming request
 This window will show up if any computer is trying to connect to a remote PC. This window shows the IP address of the requester. If the user of the remote PC allows the request, the requester will have control over the remote PC. \\
@@ -76,7 +80,7 @@ This window will show up while the two PCs are connecting.
 %Denied
 If the remote PC user does not want the connection to be built, he/she can deny the request. In this case this window will appear.
 
-\subsection{Use Case Diagram}
+%\subsection{Use Case Diagram} if possible
 
 \section{Our Goal}
 Our main goal is to complete the basic project, which is to control a PC remotely through LAN by another PC. If it is completed before estimated time, we will try to implement some extensions.
