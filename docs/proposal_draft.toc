@@ -1,9 +1,16 @@
 \contentsline {section}{\numberline {1}Introduction}{1}
 \contentsline {section}{\numberline {2}Motivation}{1}
 \contentsline {section}{\numberline {3}Project Details}{1}
-\contentsline {subsection}{\numberline {3.1}Members of the Team}{1}
-\contentsline {subsection}{\numberline {3.2}Design}{2}
-\contentsline {subsubsection}{\numberline {3.2.1}Workflow Diagram}{2}
-\contentsline {subsubsection}{\numberline {3.2.2}User Interface}{2}
-\contentsline {section}{\numberline {4}Our Goal}{3}
-\contentsline {section}{\numberline {5}Conclusion}{3}
+\contentsline {subsection}{\numberline {3.1}The Team}{1}
+\contentsline {subsection}{\numberline {3.2}Use Case}{3}
+\contentsline {subsection}{\numberline {3.3}Workflow}{4}
+\contentsline {subsection}{\numberline {3.4}User Interface}{5}
+\contentsline {subsubsection}{\numberline {3.4.1}Home}{5}
+\contentsline {subsubsection}{\numberline {3.4.2}Incoming Request}{6}
+\contentsline {subsubsection}{\numberline {3.4.3}Connecting}{6}
+\contentsline {subsubsection}{\numberline {3.4.4}Oops}{7}
+\contentsline {subsubsection}{\numberline {3.4.5}Denied}{7}
+\contentsline {subsubsection}{\numberline {3.4.6}Current Session}{8}
+\contentsline {subsection}{\numberline {3.5}Implementation Approach}{8}
+\contentsline {section}{\numberline {4}Our Goal}{9}
+\contentsline {section}{\numberline {5}Conclusion}{9}

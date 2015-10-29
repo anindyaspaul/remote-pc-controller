@@ -1,22 +1,14 @@
-\documentclass{article}
+\documentclass[12pt, a4paper]{article}
 
-%\usepackage{pdfpages}
+\usepackage{pdfpages}
 
-\usepackage[utf8]{inputenc}
-
-\begin{titlepage}
-
-
-\title{Remote PC controller}
-\author{Anindya Sundor Paul \\ Mehedi Hasan \\ S. M. Ariful Hoque \\ Fahad Chowdhury \\ Arafat Ahmed}
-\date{ }
+\renewcommand{\familydefault}{\sfdefault}
 
 \begin{document}
+
+\includepdf{titlepage}
  
 \pagenumbering{gobble}
-
-\maketitle
-\end{titlepage}
  
 \tableofcontents
 
@@ -26,61 +18,128 @@
  
 \section{Introduction}
 
-The project we will be working on is remote PC controller. The main idea of this project is to control a computer remotely by another computer. The computers will be connected through LAN. We have to send signals to control the functions of mouse and keyboard. \\
+The project we will be working on is remote PC controller. The main idea of this project is to control a computer remotely by another computer. The computers will be connected through internet. We have to provide a solution that allows one user to control another user's pc remotely over internet.
 
 \section{Motivation}
 
-The concept of this project comes from the idea of solving a computer's problem remotely. It is an interesting project to work on as numerous new features have to be worked upon. Through this project we will get a clear concept about different networking protocol and network programming. %modification needed
-Similar programs are available (i.e. TeamViewer).
-
-%Can add another section called project summary
+The concept of this project comes from the idea of solving a computer's problem remotely. It is an interesting project to work on as it not only solves a real world issue but also the idea of being able to computer another computer remotely is exciting. Through this project we will get a clear concept about TCP protocol, network programming, multi threading, screen sharing etc. Since this is a project for educational purpose, we have picked a standard software TeamViewer which is already available for real world problems. We look forward to make something similar.
 
 \section{Project Details}
 
 In this section we will be discussing the detailed functions of this project and how we will implement these functions.
 
-\subsection{Members of the Team}
+\subsection{The Team}
 
 Our team consists of five members.\\ \\
-\textbf{Anindya Sundor Paul} : CEO.\\
-\textbf{S. M. Ariful Hoque} : Backend developer.\\
-\textbf{Fahad Chowdhury Sabah} : Frontend developer.\\
-\textbf{Mehedi Hasan} : Frontend developer.\\
-\textbf{Arafat Ahmed Tanim} : Frontend developer.\\ \\
-\textbf{Anindya Sundor Paul} will organize and supervise our project. He will also work as a backend developer. He will generate the basic algorithm to complete the project. The design of the UI is also done by him.\\ \\
-\textbf{S. M. Ariful Hoque} will work as a backend developer. He will do the core programming of the project. Based on Anindya Sundor Paul's algorithm, he will develop the system.\\ \\
-\textbf{Fahad Chowdhury Sabah}, \textbf{Mehedi Hasan} and \textbf{Arafat Ahmed Tanim} will work as frontend developer. Based on the design, they will create the UI. Creating different buttons and make them functinal is their prime job. They will use different library (i.e. Java Swing).\\ \\
+\textbf{Anindya Sundar Paul}: CEO.\\
+\textbf{S. M. Ariful Hoque}: Back end developer.\\
+\textbf{Fahad Chowdhury Sabah}: Front end developer.\\
+\textbf{Mehedi Hasan}: Front end developer.\\
+\textbf{Arafat Ahmed Tanim}: Front end developer.\\
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.8]{remote-pc-controller-organogram}
+\caption{Organogram}
+\end{figure}
+
+\textbf{Anindya Sundar Paul} will organize and supervise our project. He will also work as a backend developer. He will develop the basic algorithm to complete the project. The design of the user interface is also done by him. Finally he will assemble all into one piece of final solution.\\ \\
+
+\textbf{S. M. Ariful Hoque} will work as a backend developer. He will do the core programming of the project. Based on the algorithm, he will develop the system using TCP protocol.\\ \\
+
+\textbf{Fahad Chowdhury Sabah}, \textbf{Mehedi Hasan} and \textbf{Arafat Ahmed Tanim} will work as frontend developer. Based on the design, they will create the UI. Creating different buttons, windows, screens and making them functional is their primary job. They will use Java Swing library for this.\\ \\
+
 Although the job is divided among all the members of the team, it is very much possible for one member to participate in another one's job.
 
-\subsection{Design} The basic algorithm is given by Anindya Sundor Paul. The primary UI design is also done by him although it is modifiable. 
+\subsection{Use Case}
 
-\subsubsection{Workflow Diagram}
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=1]{remote-pc-controller-usecase}
+\caption{Use Case Diagram}
+\end{figure}
 
-This is the workflow diagram of our project.\\ \\
-%\includepdf[pages=-]{remote-pc-controller-workflow.pdf}
-%here goes the pdf
+\newpage
+
+\subsection{Workflow}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.9]{remote-pc-controller-workflow}
+\caption{Workflow Diagram}
+\end{figure}
+
 After starting the program, the user may act as controlled or controller. If the user wants to connect to remote PC and control it, he/she has to enter the IP and password provided by the remote PC. After entering valid IP and password the controller will send a request in order to have control. After accepting the request, the controller will have control of the remote PC. The remote PC user will also have access to his computer and may terminate at any point. After connecting to the remote PC, the controller will do his job and then terminate the program. \\
-If the user wants his PC to be controlled, he/she will have to give his/her IP and password to the controller. This is a password generated for this sole program, not the master password. After getting the password and IP, the controller will send a request. If the remote PC user do not accept the request, the connection will not be made. If he/she accepts it, the controller will have control over the remote PC. The remote PC user may terminate the program at any moment.\\
+If the user wants his PC to be controlled, he/she will have to give his/her IP and password to the controller. This is a password generated for this sole program, not the master password. After getting the password and IP, the controller will send a request. If the remote PC user do not accept the request, the connection will not be made. If he/she accepts it, the controller will have control over the remote PC. The remote PC user may terminate the program at any moment.
 
-\subsubsection{User Interface}
+\newpage
 
-We have tried our best to come up with a UI design so that the user can use the program very easily. Here is the design.\\ \\ 
-%Goes the pdf
-%Allow remote control
-This window will appear at the start of the program. The Allow Remote Control part of the window will show the host PC, its IP address and a randomly generated password. If the user likes to allow remote control, he/she will provide these information to the controller. \\
-Control Remote PC part of the window will contain two dialog boxes to put the partner's IP and password. The controller will put the informations and send a request. If the remote PC user accepts the requests, then the connection will be built. 
-%Incoming request
-This window will show up if any computer is trying to connect to a remote PC. This window shows the IP address of the requester. If the user of the remote PC allows the request, the requester will have control over the remote PC. \\
-%current Session
-This window will appear during a session. This window will only show the controller's IP address. The contolled PC user may terminate the connection at any point using Disconnect button. \\
-%Oops
-This is a warning message. If the inserted IP and password do no match, then this window will appear.
-%connecting
-This window will show up while the two PCs are connecting.
-%Denied
-If the remote PC user does not want the connection to be built, he/she can deny the request. In this case this window will appear.
+\subsection{User Interface}
 
-%\subsection{Use Case Diagram} if possible
+We have tried our best to come up with a UI design so that the user can use the program very easily.
+
+\subsubsection{Home}
+When the software starts, the user will see this window. It provides the user with his own IP and password to share with another user. It also let's the user enter another user's IP and password in order to take control of the remote pc. Pressing the connect button will request access to the remote pc.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.75]{home}
+\caption{Home}
+\end{figure}
+
+\subsubsection{Incoming Request}
+When any user receives request for access by his partner, this screen is shown. The user can chose to deny or allow access.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.75]{incoming}
+\caption{Incoming Request}
+\end{figure}
+
+\subsubsection{Connecting}
+When the user tries to connect to a remote pc, this screen is shown while the program tries to connect to the remote pc in background.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.75]{connecting}
+\caption{Connecting}
+\end{figure}
+
+\newpage
+
+\subsubsection{Oops}
+If the user enters wrong IP or password when trying to connect to partner, this screen is shown.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.75]{oops}
+\caption{Oops}
+\end{figure}
+
+\subsubsection{Denied}
+If the remote user denies access to the user, this screen is shown.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.75]{denied}
+\caption{Denied}
+\end{figure}
+
+\newpage
+
+\subsubsection{Current Session}
+If any successful connection gets established, the user being controlled is shown this screen through which he can choose to disconnect at any moment.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.75]{current}
+\caption{Current Session}
+\end{figure}
+
+\subsection{Implementation Approach}
+The way we are planning on solving this problem is pretty straight forward. The program will create TCP connection between the two computers. As the connection gets established, two threads will be created for data transfer in two directions. Then the controller will receive screenshots of the remote pc continuously. As it gets screenshots, the user will use his mouse and keyboard and do what he wants to do. The mouse and keyboard events will be sent to the remote pc. Mouse cursor position will be calculated relative to the size of the screenshot thus resembling the proper position in the remote pc. As the remote pc receives the mouse and keyboard events, it will simulate those events. Thus we can control the pc remotely.
+
+\newpage
 
 \section{Our Goal}
 Our main goal is to complete the basic project, which is to control a PC remotely through LAN by another PC. If it is completed before estimated time, we will try to implement some extensions.
