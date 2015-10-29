@@ -1,15 +1,15 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.8.31)  29 OCT 2015 13:02
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.9.5)  29 OCT 2015 21:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **proposal_draft.tex
 (./proposal_draft.tex
-LaTeX2e <2014/05/01>
-Babel <3.9l> and hyphenation patterns for 79 languages loaded.
+LaTeX2e <2011/06/27>
+Babel <3.9h> and hyphenation patterns for 78 languages loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
-Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo
-File: size12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
 \c@section=\count80
@@ -27,18 +27,18 @@ File: size12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 Package: pdfpages 2013/08/25 v0.4v Insert pages of external PDF documents (AM)
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
-Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
 )
 (/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
-Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
+Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
 \calc@Acount=\count87
 \calc@Bcount=\count88
 \calc@Adimen=\dimen103
 \calc@Bdimen=\dimen104
 \calc@Askip=\skip43
 \calc@Bskip=\skip44
-LaTeX Info: Redefining \setlength on input line 75.
-LaTeX Info: Redefining \addtolength on input line 76.
+LaTeX Info: Redefining \setlength on input line 76.
+LaTeX Info: Redefining \addtolength on input line 77.
 \calc@Ccount=\count89
 \calc@Cskip=\skip45
 )
@@ -59,10 +59,10 @@ Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
 Package ifpdf Info: pdfTeX in PDF mode is detected.
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
-Package: keyval 2014/05/08 v1.15 key=value parser (DPC)
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks14
 )
-(/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+(/usr/share/texmf/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
 
 (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/color.cfg
@@ -85,7 +85,7 @@ Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
-Package: graphicx 2014/04/25 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
@@ -232,88 +232,73 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 \openout3 = `proposal_draft.toc'.
 
  [1]
-Underfull \hbox (badness 10000) in paragraph at lines 33--39
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 33--39
-
- []
-
 <remote-pc-controller-organogram.pdf, id=21, 412.54124pt x 484.81125pt>
 File: remote-pc-controller-organogram.pdf Graphic file (type pdf)
 
 <use remote-pc-controller-organogram.pdf>
 Package pdftex.def Info: remote-pc-controller-organogram.pdf used on input line
- 42.
+ 41.
 (pdftex.def)             Requested size: 330.03345pt x 387.84952pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 33--48
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 33--48
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 33--48
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 33--48
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 33--48
+
+ []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 46--47
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 46--47
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 48--49
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 48--49
-
- []
-
-[1]
-Underfull \hbox (badness 10000) in paragraph at lines 50--51
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 50--51
-
- []
-
-[2 <./remote-pc-controller-organogram.pdf>]
-<remote-pc-controller-usecase.pdf, id=31, 384.43625pt x 340.27126pt>
+[1] <remote-pc-controller-usecase.pdf, id=25, 384.43625pt x 340.27126pt>
 File: remote-pc-controller-usecase.pdf Graphic file (type pdf)
 
 <use remote-pc-controller-usecase.pdf>
-Package pdftex.def Info: remote-pc-controller-usecase.pdf used on input line 58
+Package pdftex.def Info: remote-pc-controller-usecase.pdf used on input line 53
 .
 (pdftex.def)             Requested size: 384.4353pt x 340.27042pt.
- [3 <./remote-pc-controller-usecase.pdf>] <remote-pc-controller-workflow.pdf, i
-d=38, 402.50375pt x 312.16624pt>
+ [2 <./remote-pc-controller-organogram.pdf>] [3 <./remote-pc-controller-usecase
+.pdf>]
+<remote-pc-controller-workflow.pdf, id=38, 402.50375pt x 312.16624pt>
 File: remote-pc-controller-workflow.pdf Graphic file (type pdf)
 
 <use remote-pc-controller-workflow.pdf>
 Package pdftex.def Info: remote-pc-controller-workflow.pdf used on input line 6
-8.
+3.
 (pdftex.def)             Requested size: 362.25002pt x 280.94702pt.
  [4 <./remote-pc-controller-workflow.pdf>] <home.pdf, id=73, 333.88742pt x 489.
 9906pt>
 File: home.pdf Graphic file (type pdf)
  <use home.pdf>
-Package pdftex.def Info: home.pdf used on input line 86.
+Package pdftex.def Info: home.pdf used on input line 81.
 (pdftex.def)             Requested size: 250.41495pt x 367.49203pt.
 
 <incoming.pdf, id=74, 336.77818pt x 251.4996pt>
 File: incoming.pdf Graphic file (type pdf)
  <use incoming.pdf>
-Package pdftex.def Info: incoming.pdf used on input line 95.
+Package pdftex.def Info: incoming.pdf used on input line 90.
 (pdftex.def)             Requested size: 252.58301pt x 188.62422pt.
  [5 <./home.pdf>] <connecting.pdf, id=86, 370.02242pt x 166.22101pt>
 File: connecting.pdf Graphic file (type pdf)
  <use connecting.pdf>
-Package pdftex.def Info: connecting.pdf used on input line 104.
+Package pdftex.def Info: connecting.pdf used on input line 99.
 (pdftex.def)             Requested size: 277.51611pt x 124.66544pt.
 
 [6 <./incoming.pdf> <./connecting.pdf
@@ -323,13 +308,13 @@ with page group included in a single page
 >] <oops.pdf, id=103, 365.6862pt x 163.3302pt>
 File: oops.pdf Graphic file (type pdf)
  <use oops.pdf>
-Package pdftex.def Info: oops.pdf used on input line 115.
+Package pdftex.def Info: oops.pdf used on input line 110.
 (pdftex.def)             Requested size: 274.26398pt x 122.49733pt.
 
 <denied.pdf, id=104, 370.02242pt x 164.7756pt>
 File: denied.pdf Graphic file (type pdf)
  <use denied.pdf>
-Package pdftex.def Info: denied.pdf used on input line 124.
+Package pdftex.def Info: denied.pdf used on input line 119.
 (pdftex.def)             Requested size: 277.51611pt x 123.58138pt.
  [7 <./oops.pdf> <./denied.pdf
 
@@ -338,22 +323,22 @@ pdfTeX warning: pdflatex (file ./denied.pdf): PDF inclusion: multiple pdfs with
 >] <current.pdf, id=121, 335.33278pt x 211.02841pt>
 File: current.pdf Graphic file (type pdf)
  <use current.pdf>
-Package pdftex.def Info: current.pdf used on input line 135.
+Package pdftex.def Info: current.pdf used on input line 130.
 (pdftex.def)             Requested size: 251.49896pt x 158.27092pt.
  [8 <./current.pdf>] [9] (./proposal_draft.aux) ) 
 Here is how much of TeX's memory you used:
- 2782 strings out of 493105
- 40068 string characters out of 6137072
- 105879 words of memory out of 5000000
- 6218 multiletter control sequences out of 15000+600000
+ 2782 strings out of 493304
+ 40021 string characters out of 6139872
+ 105335 words of memory out of 5000000
+ 6212 multiletter control sequences out of 15000+600000
  8178 words of font info for 29 fonts, out of 8000000 for 9000
- 1141 hyphenation exceptions out of 8191
+ 957 hyphenation exceptions out of 8191
  39i,18n,45p,752b,411s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist
 /fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texlive/texmf-dist/fonts
 /type1/public/amsfonts/cm/cmss17.pfb></usr/share/texlive/texmf-dist/fonts/type1
 /public/amsfonts/cm/cmssbx10.pfb>
-Output written on proposal_draft.pdf (11 pages, 367704 bytes).
+Output written on proposal_draft.pdf (11 pages, 367513 bytes).
 PDF statistics:
  145 PDF objects out of 1000 (max. 8388607)
  89 compressed objects within 1 object stream

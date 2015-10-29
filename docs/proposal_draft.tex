@@ -36,19 +36,14 @@ Our team consists of five members.\\ \\
 \textbf{Fahad Chowdhury Sabah}: Front end developer.\\
 \textbf{Mehedi Hasan}: Front end developer.\\
 \textbf{Arafat Ahmed Tanim}: Front end developer.\\
-
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.8]{remote-pc-controller-organogram}
 \caption{Organogram}
-\end{figure}
-
-\textbf{Anindya Sundar Paul} will organize and supervise our project. He will also work as a backend developer. He will develop the basic algorithm to complete the project. The design of the user interface is also done by him. Finally he will assemble all into one piece of final solution.\\ \\
-
+\end{figure} \\
+\textbf{Anindya Sundar Paul} will organize and supervise our project. He will also work as a backend developer. He will develop the basic algorithm to complete the project. The design of the user interface is also done by him. Finally he will assemble all into one piece of final solution.\\ \\ \\
 \textbf{S. M. Ariful Hoque} will work as a backend developer. He will do the core programming of the project. Based on the algorithm, he will develop the system using TCP protocol.\\ \\
-
 \textbf{Fahad Chowdhury Sabah}, \textbf{Mehedi Hasan} and \textbf{Arafat Ahmed Tanim} will work as frontend developer. Based on the design, they will create the UI. Creating different buttons, windows, screens and making them functional is their primary job. They will use Java Swing library for this.\\ \\
-
 Although the job is divided among all the members of the team, it is very much possible for one member to participate in another one's job.
 
 \subsection{Use Case}
@@ -70,7 +65,7 @@ Although the job is divided among all the members of the team, it is very much p
 \end{figure}
 
 After starting the program, the user may act as controlled or controller. If the user wants to connect to remote PC and control it, he/she has to enter the IP and password provided by the remote PC. After entering valid IP and password the controller will send a request in order to have control. After accepting the request, the controller will have control of the remote PC. The remote PC user will also have access to his computer and may terminate at any point. After connecting to the remote PC, the controller will do his job and then terminate the program. \\
-If the user wants his PC to be controlled, he/she will have to give his/her IP and password to the controller. This is a password generated for this sole program, not the master password. After getting the password and IP, the controller will send a request. If the remote PC user do not accept the request, the connection will not be made. If he/she accepts it, the controller will have control over the remote PC. The remote PC user may terminate the program at any moment.
+If the user wants his PC to be controlled, he/she will have to give his/her IP and password to the controller. This password is generated for this sole program, not the master password. After getting the password and IP, the controller will send a request. If the remote PC user do not accept the request, the connection will not be made. If he/she accepts it, the controller will have control over the remote PC. The remote PC user may terminate the program at any moment.
 
 \newpage
 
@@ -97,7 +92,7 @@ When any user receives request for access by his partner, this screen is shown. 
 \end{figure}
 
 \subsubsection{Connecting}
-When the user tries to connect to a remote pc, this screen is shown while the program tries to connect to the remote pc in background.
+When the user tries to connect to a remote PC, this screen is shown while the program tries to connect to the remote PC in background.
 
 \begin{figure}[h!]
 \centering
@@ -137,7 +132,7 @@ If any successful connection gets established, the user being controlled is show
 \end{figure}
 
 \subsection{Implementation Approach}
-The way we are planning on solving this problem is pretty straight forward. The program will create TCP connection between the two computers. As the connection gets established, two threads will be created for data transfer in two directions. Then the controller will receive screenshots of the remote pc continuously. As it gets screenshots, the user will use his mouse and keyboard and do what he wants to do. The mouse and keyboard events will be sent to the remote pc. Mouse cursor position will be calculated relative to the size of the screenshot thus resembling the proper position in the remote pc. As the remote pc receives the mouse and keyboard events, it will simulate those events. Thus we can control the pc remotely.
+The way we are planning on solving this problem is pretty straight forward. The program will create TCP connection between the two computers. As the connection gets established, two threads will be created for data transfer in two directions. Then the controller will receive screenshots of the remote PC continuously. As it gets screenshots, the user will use his mouse and keyboard and do what he wants to do. The mouse and keyboard events will be sent to the remote PC. Mouse cursor position will be calculated relative to the size of the screenshot thus resembling the proper position in the remote PC. As the remote PC receives the mouse and keyboard events, it will simulate those events. Thus we can control the PC remotely.
 
 \newpage
 
