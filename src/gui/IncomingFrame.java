@@ -46,9 +46,10 @@ public class IncomingFrame {
 	 */
 	private void initialize() {
 		frame = new JFrame("Incoming Request");
-		frame.setBounds(100, 100, 451, 316);
+		frame.setBounds(100, 100, 440, 316);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
+		frame.setResizable(false);
 		
 		JPanel panel = new JPanel(new FlowLayout(FlowLayout.LEFT));
 		panel.setBackground(Color.WHITE);
@@ -65,8 +66,8 @@ public class IncomingFrame {
 		panel.add(label1);
 		
 		
-		for (int i = 0; i < 50; i++) {
-		    panel.add(new JLabel(" 		"));
+		for (int i = 0; i < 10; i++) {
+		    panel.add(new JLabel(" "));
 		}
 		
 		JLabel label2 = new JLabel();
@@ -76,8 +77,8 @@ public class IncomingFrame {
 		label2.setBounds(0, 0, 200, 50);
 		panel.add(label2);
 		
-		for (int i = 0; i < 50; i++) {
-		    panel.add(new JLabel(" 		"));
+		for (int i = 0; i < 3; i++) {
+		    panel.add(new JLabel(" "));
 		}
 		
 		JLabel label3 = new JLabel();
@@ -85,23 +86,25 @@ public class IncomingFrame {
 		label3.setIcon(new ImageIcon(icon));
 		panel.add(label3);
 		
-		JLabel label4 = new JLabel("requester's ip address string");
+		JLabel label4 = new JLabel("requester's ip");
 		label4.setForeground(new Color(0, 0, 139));
 		label4.setFont(new Font("Tahoma", Font.BOLD, 15));
 		panel.add(label4);
 		
 		JButton btnNewButton = new JButton("Allow");
-		btnNewButton.setForeground(SystemColor.text);
-		btnNewButton.setBackground(SystemColor.textHighlight);
+		btnNewButton.setForeground(SystemColor.WHITE);
+		btnNewButton.setBackground(new Color(0x3d, 0x8a, 0xf7));
 		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 25));
 		btnNewButton.setBounds(10, 213, 200, 53);
+		btnNewButton.setFocusPainted(false);
 		frame.getContentPane().add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Deny");
-		btnNewButton_1.setForeground(SystemColor.text);
-		btnNewButton_1.setBackground(SystemColor.textHighlight);
+		btnNewButton_1.setForeground(SystemColor.WHITE);
+		btnNewButton_1.setBackground(new Color(0x3d, 0x8a, 0xf7));
 		btnNewButton_1.setFont(new Font("Tahoma", Font.BOLD, 25));
 		btnNewButton_1.setBounds(220, 213, 204, 53);
+		btnNewButton_1.setFocusPainted(false);
 		frame.getContentPane().add(btnNewButton_1);
 	}
 }

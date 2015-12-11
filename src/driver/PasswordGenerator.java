@@ -1,4 +1,4 @@
-package password;
+package driver;
 
 import java.util.Random;
 

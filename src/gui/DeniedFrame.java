@@ -44,9 +44,10 @@ public class DeniedFrame{
 	private void initialize() {
 		frame = new JFrame("Request Denied");
 		frame.getContentPane().setBackground(SystemColor.control);
-		frame.setBounds(100, 100, 457, 148);
+		frame.setBounds(100, 100, 440, 120);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
+		frame.setResizable(false);
 		
 		//JPanel panel = new JPanel();
 		JPanel panel = new JPanel(new FlowLayout(FlowLayout.LEFT));

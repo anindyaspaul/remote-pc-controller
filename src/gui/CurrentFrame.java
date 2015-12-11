@@ -46,7 +46,7 @@ public class CurrentFrame {
 	 */
 	private void initialize() {
 		frame = new JFrame("Running Session");
-		frame.setBounds(100, 100, 451, 277);
+		frame.setBounds(100, 100, 440, 277);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
@@ -64,7 +64,7 @@ public class CurrentFrame {
 		panel.add(label1);
 		
 		for (int i = 0; i < 60; i++) {
-		    panel.add(new JLabel(" 		"));
+		    panel.add(new JLabel(" "));
 		}
 		
 		JLabel label3 = new JLabel();
@@ -72,18 +72,20 @@ public class CurrentFrame {
 		label3.setIcon(new ImageIcon(icon));
 		panel.add(label3);
 		
-		JLabel label4 = new JLabel("connector's ip address string");
+		JLabel label4 = new JLabel("connector's ip");
 		label4.setForeground(new Color(0, 0, 139));
 		label4.setFont(new Font("Tahoma", Font.BOLD, 15));
 		panel.add(label4);
 		
 		JButton btnNewButton = new JButton("Disconnect");
-		btnNewButton.setForeground(SystemColor.text);
-		btnNewButton.setBackground(SystemColor.textHighlight);
+		btnNewButton.setForeground(SystemColor.WHITE);
+		btnNewButton.setBackground(new Color(0x3d, 0x8a, 0xf7));
 		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 25));
 		btnNewButton.setBounds(10, 179, 414, 53);
+		btnNewButton.setFocusPainted(false);
 		frame.getContentPane().add(btnNewButton);
 		
+		frame.setResizable(false);
 	}
 
 }
