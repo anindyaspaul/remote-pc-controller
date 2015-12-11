@@ -11,7 +11,6 @@ import javax.swing.SwingUtilities;
 
 import gui.CurrentFrame;
 import gui.IncomingFrame;
-import sun.text.normalizer.ICUBinary.Authenticate;
 import utilities.Constants;
 
 public class RequestReceiver implements Runnable, ActionListener {

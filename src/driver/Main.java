@@ -13,7 +13,7 @@ public class Main {
 		PasswordGenerator pass = new PasswordGenerator();
 		String password = pass.password;
 
-		// new Thread(new RequestReceiver(Constants.port, password)).start();
+		 new Thread(new RequestReceiver(Constants.port, password)).start();
 
 		SwingUtilities.invokeLater(new Runnable() {
 
