@@ -8,11 +8,11 @@ public class PasswordGenerator
 	
 	/*****************Main function*******************/
 	
-	public static void main(String args[])
-	{
-		PasswordGenerator pass = new PasswordGenerator();
-		System.out.println(pass.password);
-	}
+//	public static void main(String args[])
+//	{
+//		PasswordGenerator pass = new PasswordGenerator();
+//		System.out.println(pass.password);
+//	}
 	
 	/******************Constructor********************/
 	

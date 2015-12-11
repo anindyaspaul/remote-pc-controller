@@ -16,4 +16,7 @@ public class Panel_41 extends JPanel {
 		add(connectButton);
 	}
 
+	public JButton getConnectButton() {
+		return connectButton;
+	}
 }

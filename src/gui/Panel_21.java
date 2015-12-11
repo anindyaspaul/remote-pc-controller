@@ -4,20 +4,21 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Polygon;
+import java.net.Inet4Address;
 import java.net.InetAddress;
-import static java.net.InetAddress.getLocalHost;
-import java.net.UnknownHostException;
-import java.text.AttributedCharacterIterator;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.net.NetworkInterface;
+
+import java.util.Enumeration;
 import javax.swing.BorderFactory;
-import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextPane;
 
 public class Panel_21 extends JPanel {
 
-	public Panel_21() {
+	String password;
+
+	public Panel_21(String password) {
+		this.password = password;
 		setBackground(Color.WHITE);
 		setSize(300, 200);
 		setBorder(BorderFactory.createLineBorder(Color.lightGray));
@@ -41,8 +42,8 @@ public class Panel_21 extends JPanel {
 		Color myBlue1 = new Color(0, 127, 255);
 		Color myBlue2 = new Color(0, 38, 153);
 
-		String YourIP = " 127.127.127.127 "; // host IP
-		String YourPass = "ABCD"; // host Password
+		String YourIP = getIP();
+		String YourPass = " " + password; // host Password
 
 		Font font = new Font("Arial, Helvetica, sans-serif", Font.BOLD, 14);
 
@@ -70,6 +71,23 @@ public class Panel_21 extends JPanel {
 		g.setColor(myBlue2);
 		g.drawString(YourPass, 160, 173);
 
+	}
+
+	private String getIP() {
+		try {
+			for (Enumeration<NetworkInterface> en = NetworkInterface.getNetworkInterfaces(); en.hasMoreElements();) {
+				NetworkInterface intf = (NetworkInterface) en.nextElement();
+				for (Enumeration<InetAddress> enumIpAddr = intf.getInetAddresses(); enumIpAddr.hasMoreElements();) {
+					InetAddress inetAddress = (InetAddress) enumIpAddr.nextElement();
+					if (!inetAddress.isLoopbackAddress() && inetAddress instanceof Inet4Address) {
+						return inetAddress.getHostAddress().toString();
+					}
+				}
+			}
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		return null;
 	}
 
 }

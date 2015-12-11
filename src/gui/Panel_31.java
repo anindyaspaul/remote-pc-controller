@@ -1,24 +1,23 @@
 package gui;
 
-import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
-import static java.awt.GridBagConstraints.SOUTHWEST;
 import java.awt.Polygon;
-import java.awt.event.KeyEvent;
-import java.util.Hashtable;
 import javax.swing.BorderFactory;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.JTextPane;
 
 public class Panel_31 extends JPanel {
-	private JPasswordField passwordField;
+	public JPasswordField passwordField;
+	public JTextField ipField;
 
-	public Panel_31() {
+	public Panel_31(JTextField ipField, JPasswordField passwordField) {
+		this.ipField = ipField;
+		this.passwordField = passwordField;
+		
 		setBackground(Color.WHITE);
 		setSize(300, 200);
 		setBorder(BorderFactory.createLineBorder(Color.lightGray));
@@ -53,7 +52,10 @@ public class Panel_31 extends JPanel {
 		g.setFont(font);
 		g.drawString("Partner's IP", 40, 125);
 		g.setColor(myBlue2);
-		g.drawString("170.192.55.68", 160, 125);
+//		g.drawString("170.192.55.68", 160, 125);
+//		ipField = new JTextField();
+		ipField.setBounds(160, 100, 112, 30);
+		add(ipField);
 
 		for (int i = 0; i < 3; i++)
 			p2.addPoint((int) (120 + 15 * Math.cos(i * 2 * Math.PI / 3)),
@@ -64,9 +66,17 @@ public class Panel_31 extends JPanel {
 		g.setColor(Color.WHITE);
 		g.setFont(font);
 		g.drawString("Password", 40, 153);
-		JTextField passwordField = new JPasswordField("");
+//		passwordField = new JPasswordField("");
 		passwordField.setBounds(160, 133, 112, 30);
 		add(passwordField);
+	}
+
+	public JPasswordField getPasswordField() {
+		return passwordField;
+	}
+
+	public JTextField getIpField() {
+		return ipField;
 	}
 
 }
