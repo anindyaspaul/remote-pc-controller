@@ -44,15 +44,16 @@ public class OopsFrame{
 	private void initialize() {
 		frame = new JFrame("Error");
 		frame.getContentPane().setBackground(SystemColor.control);
-		frame.setBounds(100, 100, 457, 148);
+		frame.setBounds(100, 100, 440, 130);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
+		frame.setResizable(false);
 		
 		//JPanel panel = new JPanel();
 		JPanel panel = new JPanel(new FlowLayout(FlowLayout.LEFT));
 		panel.setBackground(Color.WHITE);
 		panel.setBorder(new LineBorder(new Color(192, 192, 192), 1, true));
-		panel.setBounds(10, 11, 421, 87);
+		panel.setBounds(10, 11, 420, 87);
 		frame.getContentPane().add(panel);
 		
 		JLabel label1 = new JLabel();
@@ -64,8 +65,8 @@ public class OopsFrame{
 		panel.add(label1);
 		
 		
-		for (int i = 0; i < 40; i++) {
-		    panel.add(new JLabel(" 		"));
+		for (int i = 0; i < 10; i++) {
+		    panel.add(new JLabel(" "));
 		}
 		
 		JLabel label2 = new JLabel();

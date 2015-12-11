@@ -21,6 +21,7 @@ public class Frame extends JFrame
         setLayout ( new GridBagLayout () ) ;
         setSize ( 300 , 500 ) ;
         setDefaultCloseOperation ( JFrame . EXIT_ON_CLOSE ) ;
+        setResizable(false);
 //        setUndecorated ( true ) ;
         getRootPane().setBorder(BorderFactory.createMatteBorder(4, 4, 4, 4, Color.lightGray));  // frame border 
         GridBagConstraints gbc = new GridBagConstraints () ; // we have a ( 4 , 1 ) grid  
