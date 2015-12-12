@@ -7,6 +7,7 @@ import java.io.DataOutputStream;
 import java.net.Socket;
 
 import javax.imageio.ImageIO;
+import javax.swing.SwingUtilities;
 
 import gui.CurrentFrame;
 
@@ -38,7 +39,17 @@ public class ScreenSender implements Runnable {
 			}	
 		} catch (Exception e) {
 			System.out.println("Error in screen sender: " + e);
-			currentFrame.frame.setVisible(false);
+			hideCurrentFrame();
 		}
+	}
+	
+	void hideCurrentFrame() {
+		SwingUtilities.invokeLater(new Runnable() {
+			
+			@Override
+			public void run() {
+				currentFrame.frame.setVisible(false);
+			}
+		});
 	}
 }

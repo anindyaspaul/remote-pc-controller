@@ -3,6 +3,7 @@ package host;
 import utilities.*;
 import java.awt.Robot;
 import java.awt.event.MouseEvent;
+import java.awt.event.MouseWheelEvent;
 import java.io.ObjectInputStream;
 import java.net.Socket;
 
@@ -36,6 +37,8 @@ public class ControlReceiver implements Runnable {
 					mouseMove((MouseEvent) event.getEvent());
 				if (event.getValue() == GenericEvent.MOUSE_DRAGGED)
 					mouseMove((MouseEvent) event.getEvent());
+				if (event.getValue() == GenericEvent.MOUSE_WHEEL)
+					mouseScroll((MouseWheelEvent) event.getEvent());
 				if (event.getValue() == GenericEvent.KEY_PRESSED)
 					keyPress(event.getKeyValue());
 				if (event.getValue() == GenericEvent.KEY_RELEASED)
@@ -47,30 +50,30 @@ public class ControlReceiver implements Runnable {
 	}
 
 	private void mousePress(MouseEvent event) {
-		System.out.println(event.getX() + " " + event.getY());
 		bot.mouseMove(event.getX(), event.getY());
 		int mask = getMask(event);
 		bot.mousePress(mask);
 	}
 
 	private void mouseRelease(MouseEvent event) {
-		System.out.println(event.getX() + " " + event.getY());
 		bot.mouseMove(event.getX(), event.getY());
 		int mask = getMask(event);
 		bot.mouseRelease(mask);
 	}
 
 	private void mouseMove(MouseEvent event) {
-		System.out.println("mouse moved " + event.getX() + " " + event.getY());
 		bot.mouseMove(event.getX(), event.getY());
 	}
 	
 	private void mouseClick(MouseEvent event) {
-		System.out.println(event.getX() + " " + event.getY());
 		bot.mouseMove(event.getX(), event.getY());
 		int mask = getMask(event);
 		bot.mousePress(mask);
 		bot.mouseRelease(mask);
+	}
+	
+	private void mouseScroll(MouseWheelEvent event) {
+		bot.mouseWheel(event.getWheelRotation());
 	}
 
 	private void keyPress(int keycode) {

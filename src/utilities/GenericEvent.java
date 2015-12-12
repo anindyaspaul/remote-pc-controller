@@ -11,6 +11,7 @@ public class GenericEvent implements Serializable {
 	public static final int MOUSE_CLICKED	= 2;
 	public static final int MOUSE_MOVED		= 3;
 	public static final int MOUSE_DRAGGED	= 4;
+	public static final int MOUSE_WHEEL		= 5;
 	public static final int KEY_PRESSED		= 9;
 	public static final int KEY_RELEASED	= 10;
 	

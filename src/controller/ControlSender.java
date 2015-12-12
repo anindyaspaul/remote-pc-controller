@@ -6,12 +6,14 @@ import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
+import java.awt.event.MouseWheelEvent;
+import java.awt.event.MouseWheelListener;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
 
 import javax.swing.JLabel;
 
-public class ControlSender implements Runnable, MouseListener, MouseMotionListener, KeyListener {
+public class ControlSender implements Runnable, MouseListener, MouseMotionListener, MouseWheelListener, KeyListener {
 
 	Socket socket;
 	JLabel imageLabel;
@@ -36,8 +38,6 @@ public class ControlSender implements Runnable, MouseListener, MouseMotionListen
 
 	@Override
 	public void mousePressed(MouseEvent e) {
-		System.out.println("Mouse Pressed " + e.getX() + " " + e.getY());
-
 		GenericEvent event = new GenericEvent(GenericEvent.MOUSE_PRESSED, 0, e);
 		try {
 			oos.writeObject(event);
@@ -49,8 +49,6 @@ public class ControlSender implements Runnable, MouseListener, MouseMotionListen
 
 	@Override
 	public void mouseReleased(MouseEvent e) {
-		System.out.println("Mouse Released " + e.getX() + " " + e.getY());
-
 		GenericEvent event = new GenericEvent(GenericEvent.MOUSE_RELEASED, 0, e);
 		try {
 			oos.writeObject(event);
@@ -62,8 +60,6 @@ public class ControlSender implements Runnable, MouseListener, MouseMotionListen
 
 	@Override
 	public void mouseMoved(MouseEvent e) {
-		System.out.println("Mouse moved " + e.getX() + " " + e.getY());
-		
 		GenericEvent event = new GenericEvent(GenericEvent.MOUSE_MOVED, 0, e);
 		try {
 			oos.writeObject(event);
@@ -72,11 +68,9 @@ public class ControlSender implements Runnable, MouseListener, MouseMotionListen
 			System.out.println(e2);
 		}
 	}
-	
+
 	@Override
 	public void mouseDragged(MouseEvent e) {
-		System.out.println("Mouse dragged " + e.getX() + " " + e.getY());
-		
 		GenericEvent event = new GenericEvent(GenericEvent.MOUSE_DRAGGED, 0, e);
 		try {
 			oos.writeObject(event);
@@ -87,9 +81,18 @@ public class ControlSender implements Runnable, MouseListener, MouseMotionListen
 	}
 
 	@Override
-	public void keyPressed(KeyEvent e) {
-		System.out.println("Key pressed " + e.getKeyCode());
+	public void mouseWheelMoved(MouseWheelEvent e) {
+		GenericEvent event = new GenericEvent(GenericEvent.MOUSE_WHEEL, 0, e);
+		try {
+			oos.writeObject(event);
+			oos.flush();
+		} catch (Exception e2) {
+			System.out.println(e2);
+		}
+	}
 
+	@Override
+	public void keyPressed(KeyEvent e) {
 		GenericEvent event = new GenericEvent(GenericEvent.KEY_PRESSED, e.getKeyCode(), null);
 		try {
 			oos.writeObject(event);
@@ -101,8 +104,6 @@ public class ControlSender implements Runnable, MouseListener, MouseMotionListen
 
 	@Override
 	public void keyReleased(KeyEvent e) {
-		System.out.println("Key released " + e.getKeyCode());
-
 		GenericEvent event = new GenericEvent(GenericEvent.KEY_RELEASED, e.getKeyCode(), null);
 		try {
 			oos.writeObject(event);
