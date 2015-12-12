@@ -18,12 +18,14 @@ public class RequestSender implements Runnable {
 	String host;
 	JLabel imageLabel;
 	String password;
+	ConnectingFrame connectingFrame;
 
 	public RequestSender(String host, int port, String password) {
 		this.host = host;
 		this.port = port;
 		this.imageLabel = new JLabel();
 		this.password = password;
+		this.connectingFrame = new ConnectingFrame();
 	}
 
 	@Override
@@ -43,10 +45,9 @@ public class RequestSender implements Runnable {
 		DataOutputStream dos = new DataOutputStream(socket.getOutputStream());
 		DataInputStream dis = new DataInputStream(socket.getInputStream());
 		dos.writeUTF(password);
-		ConnectingFrame connectingFrame = new ConnectingFrame();
-		showConnecting(connectingFrame);
+		showConnecting();
 		int ret = dis.readInt();
-		hideConnecting(connectingFrame);
+		hideConnecting();
 		if (ret == Constants.denied)
 			showDenied();
 		else if (ret == Constants.allowed)
@@ -67,7 +68,7 @@ public class RequestSender implements Runnable {
 		});
 	}
 
-	void showConnecting(ConnectingFrame connectingFrame) {
+	void showConnecting() {
 		SwingUtilities.invokeLater(new Runnable() {
 
 			@Override
@@ -77,7 +78,7 @@ public class RequestSender implements Runnable {
 		});
 	}
 
-	void hideConnecting(ConnectingFrame connectingFrame) {
+	void hideConnecting() {
 		SwingUtilities.invokeLater(new Runnable() {
 
 			@Override
