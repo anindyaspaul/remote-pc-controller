@@ -11,6 +11,8 @@ import javax.swing.JTextField;
 import javax.swing.JTextPane;
 
 public class Panel_31 extends JPanel {
+
+	private static final long serialVersionUID = 2081070942445888131L;
 	public JPasswordField passwordField;
 	public JTextField ipField;
 

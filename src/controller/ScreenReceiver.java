@@ -36,13 +36,9 @@ public class ScreenReceiver implements Runnable {
 				}
 			});
 			
-			int cnt = 0;
 			while(true) {
 				int sz = dis.readInt();
-//				System.out.println(++cnt);
-//				System.out.println("image size: " + sz);
 				byte[] imageData = new byte[sz];
-//				System.out.println("buf len: " + imageData.length);
 				dis.readFully(imageData);
 				ByteArrayInputStream bais = new ByteArrayInputStream(imageData);
 				BufferedImage screenShot = ImageIO.read(bais);

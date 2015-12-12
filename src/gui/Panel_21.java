@@ -15,6 +15,7 @@ import javax.swing.JTextPane;
 
 public class Panel_21 extends JPanel {
 
+	private static final long serialVersionUID = 1223443439029877793L;
 	String password;
 
 	public Panel_21(String password) {

@@ -13,13 +13,14 @@ public class Main {
 		PasswordGenerator pass = new PasswordGenerator();
 		String password = pass.password;
 
-		 new Thread(new RequestReceiver(Constants.port, password)).start();
+		new Thread(new RequestReceiver(Constants.port, password)).start();
 
 		SwingUtilities.invokeLater(new Runnable() {
 
 			@Override
 			public void run() {
 				Frame frame = new Frame(password);
+				frame.setVisible(true);
 				// CurrentFrame currentFrame = new CurrentFrame();
 				// currentFrame.frame.setVisible(true);
 				// ConnectingFrame connectingFrame = new ConnectingFrame();

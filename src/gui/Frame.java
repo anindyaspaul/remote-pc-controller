@@ -16,6 +16,8 @@ import controller.RequestSender;
 import utilities.Constants;
 
 public class Frame extends JFrame implements ActionListener {
+	
+	private static final long serialVersionUID = -1254328551738199832L;
 	// private final Panel_11 b1panel ;
 	private final Panel_21 panel1;
 	private final Panel_31 panel2;
@@ -75,12 +77,12 @@ public class Frame extends JFrame implements ActionListener {
 							// connect button
 
 		pack();
-		setVisible(true);
 
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
+		@SuppressWarnings("deprecation")
 		String password = passwordField.getText();
 		String ip = ipField.getText();
 		System.out.println(password);

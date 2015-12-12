@@ -11,9 +11,10 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class Panel_11 extends JPanel implements ActionListener {
+	
+	private static final long serialVersionUID = 3190478374508864533L;
 	private JButton minimizeButton;
 	private JButton exitButton;
-	private JLabel text;
 
 	public Panel_11() {
 

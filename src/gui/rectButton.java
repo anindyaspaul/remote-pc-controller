@@ -1,10 +1,12 @@
 package gui;
 
 import javax.swing.JButton;
-import java.awt.geom.*;
 import java.awt.*;
 
 public class rectButton extends JButton {
+
+	private static final long serialVersionUID = 4604177890315557259L;
+
 	public rectButton(String lbl) {
 		super(lbl);
 		setPreferredSize(new Dimension(30, 30));

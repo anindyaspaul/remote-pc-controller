@@ -4,6 +4,9 @@ import javax.swing.JButton;
 import java.awt.*;
 
 public class modifButton extends JButton {
+
+	private static final long serialVersionUID = -6154025927899599825L;
+
 	public modifButton(String lbl) {
 		super(lbl);
 		setPreferredSize(new Dimension(30, 30));
