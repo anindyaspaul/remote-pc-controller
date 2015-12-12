@@ -34,6 +34,8 @@ public class ControlReceiver implements Runnable {
 					mouseClick((MouseEvent) event.getEvent());
 				if (event.getValue() == GenericEvent.MOUSE_MOVED)
 					mouseMove((MouseEvent) event.getEvent());
+				if (event.getValue() == GenericEvent.MOUSE_DRAGGED)
+					mouseMove((MouseEvent) event.getEvent());
 				if (event.getValue() == GenericEvent.KEY_PRESSED)
 					keyPress(event.getKeyValue());
 				if (event.getValue() == GenericEvent.KEY_RELEASED)
@@ -62,7 +64,7 @@ public class ControlReceiver implements Runnable {
 		System.out.println("mouse moved " + event.getX() + " " + event.getY());
 		bot.mouseMove(event.getX(), event.getY());
 	}
-
+	
 	private void mouseClick(MouseEvent event) {
 		System.out.println(event.getX() + " " + event.getY());
 		bot.mouseMove(event.getX(), event.getY());

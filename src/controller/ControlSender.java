@@ -72,10 +72,18 @@ public class ControlSender implements Runnable, MouseListener, MouseMotionListen
 			System.out.println(e2);
 		}
 	}
-
+	
 	@Override
-	public void mouseClicked(MouseEvent e) {
-		// Do nothing
+	public void mouseDragged(MouseEvent e) {
+		System.out.println("Mouse dragged " + e.getX() + " " + e.getY());
+		
+		GenericEvent event = new GenericEvent(GenericEvent.MOUSE_DRAGGED, 0, e);
+		try {
+			oos.writeObject(event);
+			oos.flush();
+		} catch (Exception e2) {
+			System.out.println(e2);
+		}
 	}
 
 	@Override
@@ -105,6 +113,11 @@ public class ControlSender implements Runnable, MouseListener, MouseMotionListen
 	}
 
 	@Override
+	public void mouseClicked(MouseEvent e) {
+		// Do nothing
+	}
+
+	@Override
 	public void mouseEntered(MouseEvent e) {
 		// Do nothing
 	}
@@ -116,11 +129,6 @@ public class ControlSender implements Runnable, MouseListener, MouseMotionListen
 
 	@Override
 	public void keyTyped(KeyEvent e) {
-		// Do nothing
-	}
-
-	@Override
-	public void mouseDragged(MouseEvent e) {
 		// Do nothing
 	}
 }
