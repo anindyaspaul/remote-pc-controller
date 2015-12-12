@@ -85,8 +85,6 @@ public class Frame extends JFrame implements ActionListener {
 		@SuppressWarnings("deprecation")
 		String password = passwordField.getText();
 		String ip = ipField.getText();
-		System.out.println(password);
-		System.out.println(ip);
 		new Thread(new RequestSender(ip, Constants.port, password)).start();
 	}
 }

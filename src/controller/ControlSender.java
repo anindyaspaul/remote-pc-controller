@@ -26,6 +26,7 @@ public class ControlSender implements Runnable, MouseListener, MouseMotionListen
 		this.imageLabel = imageLabel;
 		this.imageLabel.addMouseListener(this);
 		this.imageLabel.addMouseMotionListener(this);
+		this.imageLabel.addMouseWheelListener(this);
 		this.imageLabel.addKeyListener(this);
 		this.imageLabel.setFocusable(true);
 	}
@@ -82,6 +83,7 @@ public class ControlSender implements Runnable, MouseListener, MouseMotionListen
 
 	@Override
 	public void mouseWheelMoved(MouseWheelEvent e) {
+		System.out.println(e.getWheelRotation());
 		GenericEvent event = new GenericEvent(GenericEvent.MOUSE_WHEEL, 0, e);
 		try {
 			oos.writeObject(event);
