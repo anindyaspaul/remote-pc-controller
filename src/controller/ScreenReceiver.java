@@ -23,12 +23,14 @@ public class ScreenReceiver implements Runnable, ComponentListener {
 	ImageIcon screenIcon;
 	public int height;
 	public int width;
+	public boolean flag;
 
 	public ScreenReceiver(Socket socket, JLabel imageLabel) {
 		this.socket = socket;
 		this.imageLabel = imageLabel;
 		this.height = 500;
 		this.width = 500;
+		this.flag = false;
 	}
 
 	@Override
@@ -51,10 +53,16 @@ public class ScreenReceiver implements Runnable, ComponentListener {
 				BufferedImage screenShot = ImageIO.read(bais);
 				double ow = screenShot.getWidth();
 				double oh = screenShot.getHeight();
-				double cw = height/oh*ow;
+				double cw = height / oh * ow;
 				Image screenShotResized;
-				if(cw <= width) screenShotResized = screenShot.getScaledInstance(-1, height, Image.SCALE_SMOOTH);
-				else screenShotResized = screenShot.getScaledInstance(width, -1, Image.SCALE_SMOOTH);
+				if (flag) {
+					if (cw <= width)
+						screenShotResized = screenShot.getScaledInstance(-1, height, Image.SCALE_SMOOTH);
+					else
+						screenShotResized = screenShot.getScaledInstance(width, -1, Image.SCALE_SMOOTH);
+				} else {
+					screenShotResized = screenShot;
+				}
 				screenIcon = new ImageIcon(screenShotResized);
 
 				SwingUtilities.invokeLater(new Runnable() {
@@ -88,6 +96,7 @@ public class ScreenReceiver implements Runnable, ComponentListener {
 		JFrame fr = (JFrame) e.getComponent();
 		height = fr.getContentPane().getHeight();
 		width = fr.getContentPane().getWidth();
+		this.flag = true;
 	}
 
 	@Override

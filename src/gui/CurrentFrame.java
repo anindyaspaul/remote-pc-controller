@@ -46,20 +46,20 @@ public class CurrentFrame {
 	 */
 	private void initialize(JButton btnNewButton) {
 		frame = new JFrame("Running Session");
-		frame.setBounds(100, 100, 438, 180);
+		frame.setBounds(100, 100, 450, 220);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		JPanel panel = new JPanel(new FlowLayout(FlowLayout.LEFT));
 		panel.setBackground(Color.WHITE);
 		panel.setBorder(new LineBorder(new Color(192, 192, 192), 1, true));
-		panel.setBounds(10, 11, 414, 100);
+		panel.setBounds(10, 11, 412, 100);
 		frame.getContentPane().add(panel);
 		
 		JLabel label1 = new JLabel();
 		label1.setFont(new Font("Tahoma", Font.PLAIN, 30));
 		label1.setForeground(new Color(0, 102, 255));
-		label1.setText("Current Session");
+		label1.setText("Current Session   ");
 		label1.setBounds(0, 0, 200, 50);
 		panel.add(label1);
 		
@@ -80,7 +80,7 @@ public class CurrentFrame {
 		btnNewButton.setForeground(SystemColor.text);
 		btnNewButton.setBackground(new Color(0x3d, 0x8a, 0xf7));
 		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 25));
-		btnNewButton.setBounds(10, 117, 414, 53);
+		btnNewButton.setBounds(10, 117, 412, 53);
 		btnNewButton.setFocusPainted(false);
 		frame.getContentPane().add(btnNewButton);
 		

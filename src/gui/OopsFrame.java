@@ -43,7 +43,7 @@ public class OopsFrame{
 	private void initialize() {
 		frame = new JFrame("Error");
 		frame.getContentPane().setBackground(SystemColor.control);
-		frame.setBounds(100, 100, 440, 112);
+		frame.setBounds(100, 100, 450, 147);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
@@ -51,7 +51,7 @@ public class OopsFrame{
 		JPanel panel = new JPanel(new FlowLayout(FlowLayout.LEFT));
 		panel.setBackground(Color.WHITE);
 		panel.setBorder(new LineBorder(new Color(192, 192, 192), 1, true));
-		panel.setBounds(10, 11, 421, 87);
+		panel.setBounds(10, 11, 412, 87);
 		frame.getContentPane().add(panel);
 		
 		JLabel label1 = new JLabel();

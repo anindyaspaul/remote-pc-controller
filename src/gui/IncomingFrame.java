@@ -46,14 +46,14 @@ public class IncomingFrame {
 	 */
 	private void initialize(JButton btnNewButton, JButton btnNewButton_1) {
 		frame = new JFrame("Incoming Request");
-		frame.setBounds(100, 100, 435, 216);
+		frame.setBounds(100, 100, 450, 258);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		JPanel panel = new JPanel(new FlowLayout(FlowLayout.LEFT));
 		panel.setBackground(Color.WHITE);
 		panel.setBorder(new LineBorder(new Color(192, 192, 192), 1, true));
-		panel.setBounds(10, 11, 414, 132);
+		panel.setBounds(10, 11, 412, 132);
 		frame.getContentPane().add(panel);
 		
 		JLabel label1 = new JLabel();
@@ -85,14 +85,14 @@ public class IncomingFrame {
 		btnNewButton.setForeground(SystemColor.text);
 		btnNewButton.setBackground(new Color(0x3d, 0x8a, 0xf7));
 		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 25));
-		btnNewButton.setBounds(10, 155, 200, 53);
+		btnNewButton.setBounds(10, 155, 204, 53);
 		btnNewButton.setFocusPainted(false);
 		frame.getContentPane().add(btnNewButton);
 		
 		btnNewButton_1.setForeground(SystemColor.text);
 		btnNewButton_1.setBackground(new Color(0x3d, 0x8a, 0xf7));
 		btnNewButton_1.setFont(new Font("Tahoma", Font.BOLD, 25));
-		btnNewButton_1.setBounds(220, 155, 204, 53);
+		btnNewButton_1.setBounds(220, 155, 202, 53);
 		btnNewButton_1.setFocusPainted(false);
 		frame.getContentPane().add(btnNewButton_1);
 	}
