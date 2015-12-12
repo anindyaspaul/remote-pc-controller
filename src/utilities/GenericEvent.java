@@ -1,4 +1,5 @@
 package utilities;
+import java.awt.Dimension;
 import java.awt.event.InputEvent;
 import java.io.Serializable;
 
@@ -18,11 +19,13 @@ public class GenericEvent implements Serializable {
 	int value;
 	int keyvalue;
 	InputEvent event;
+	Dimension dim;
 	
 	public GenericEvent(int value, int keyvalue, InputEvent event) {
 		this.value = value;
 		this.keyvalue = keyvalue;
 		this.event = event;
+		this.dim = null;
 	}
 
 	public int getValue() {
@@ -35,5 +38,13 @@ public class GenericEvent implements Serializable {
 
 	public InputEvent getEvent() {
 		return event;
+	}
+	
+	public void setDim(Dimension dim) {
+		this.dim = dim;
+	}
+	
+	public Dimension getDim() {
+		return dim;
 	}
 }

@@ -40,6 +40,8 @@ public class ControlSender implements Runnable, MouseListener, MouseMotionListen
 	@Override
 	public void mousePressed(MouseEvent e) {
 		GenericEvent event = new GenericEvent(GenericEvent.MOUSE_PRESSED, 0, e);
+		JLabel lab = (JLabel) e.getSource();
+		event.setDim(lab.getSize());
 		try {
 			oos.writeObject(event);
 			oos.flush();
@@ -51,6 +53,8 @@ public class ControlSender implements Runnable, MouseListener, MouseMotionListen
 	@Override
 	public void mouseReleased(MouseEvent e) {
 		GenericEvent event = new GenericEvent(GenericEvent.MOUSE_RELEASED, 0, e);
+		JLabel lab = (JLabel) e.getSource();
+		event.setDim(lab.getSize());
 		try {
 			oos.writeObject(event);
 			oos.flush();
@@ -62,6 +66,8 @@ public class ControlSender implements Runnable, MouseListener, MouseMotionListen
 	@Override
 	public void mouseMoved(MouseEvent e) {
 		GenericEvent event = new GenericEvent(GenericEvent.MOUSE_MOVED, 0, e);
+		JLabel lab = (JLabel) e.getSource();
+		event.setDim(lab.getSize());
 		try {
 			oos.writeObject(event);
 			oos.flush();
@@ -73,6 +79,8 @@ public class ControlSender implements Runnable, MouseListener, MouseMotionListen
 	@Override
 	public void mouseDragged(MouseEvent e) {
 		GenericEvent event = new GenericEvent(GenericEvent.MOUSE_DRAGGED, 0, e);
+		JLabel lab = (JLabel) e.getSource();
+		event.setDim(lab.getSize());
 		try {
 			oos.writeObject(event);
 			oos.flush();
@@ -85,6 +93,8 @@ public class ControlSender implements Runnable, MouseListener, MouseMotionListen
 	public void mouseWheelMoved(MouseWheelEvent e) {
 		System.out.println(e.getWheelRotation());
 		GenericEvent event = new GenericEvent(GenericEvent.MOUSE_WHEEL, 0, e);
+		JLabel lab = (JLabel) e.getSource();
+		event.setDim(lab.getSize());
 		try {
 			oos.writeObject(event);
 			oos.flush();

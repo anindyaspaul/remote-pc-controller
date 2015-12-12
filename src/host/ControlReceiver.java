@@ -1,7 +1,10 @@
 package host;
 
 import utilities.*;
+
+import java.awt.Dimension;
 import java.awt.Robot;
+import java.awt.Toolkit;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseWheelEvent;
 import java.io.ObjectInputStream;
@@ -12,11 +15,13 @@ public class ControlReceiver implements Runnable {
 	Socket socket;
 	ObjectInputStream ois;
 	Robot bot;
+	Dimension screenSize;
 
 	public ControlReceiver(Socket socket) throws Exception {
 		this.socket = socket;
 		this.ois = new ObjectInputStream(socket.getInputStream());
 		this.bot = new Robot();
+		this.screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 	}
 
 	@Override
@@ -28,17 +33,17 @@ public class ControlReceiver implements Runnable {
 				event = (GenericEvent) ois.readObject();
 
 				if (event.getValue() == GenericEvent.MOUSE_PRESSED)
-					mousePress((MouseEvent) event.getEvent());
+					mousePress((MouseEvent) event.getEvent(), event.getDim());
 				if (event.getValue() == GenericEvent.MOUSE_RELEASED)
-					mouseRelease((MouseEvent) event.getEvent());
+					mouseRelease((MouseEvent) event.getEvent(), event.getDim());
 				if (event.getValue() == GenericEvent.MOUSE_CLICKED)
-					mouseClick((MouseEvent) event.getEvent());
+					mouseClick((MouseEvent) event.getEvent(), event.getDim());
 				if (event.getValue() == GenericEvent.MOUSE_MOVED)
-					mouseMove((MouseEvent) event.getEvent());
+					mouseMove((MouseEvent) event.getEvent(), event.getDim());
 				if (event.getValue() == GenericEvent.MOUSE_DRAGGED)
-					mouseMove((MouseEvent) event.getEvent());
+					mouseMove((MouseEvent) event.getEvent(), event.getDim());
 				if (event.getValue() == GenericEvent.MOUSE_WHEEL)
-					mouseScroll((MouseWheelEvent) event.getEvent());
+					mouseScroll((MouseWheelEvent) event.getEvent(), event.getDim());
 				if (event.getValue() == GenericEvent.KEY_PRESSED)
 					keyPress(event.getKeyValue());
 				if (event.getValue() == GenericEvent.KEY_RELEASED)
@@ -49,30 +54,33 @@ public class ControlReceiver implements Runnable {
 		}
 	}
 
-	private void mousePress(MouseEvent event) {
-		bot.mouseMove(event.getX(), event.getY());
+	private void mousePress(MouseEvent event, Dimension dim) {
+		double x = (event.getX()*screenSize.getWidth())/dim.getWidth();
+		double y = (event.getY()*screenSize.getHeight())/dim.getHeight();
+		bot.mouseMove((int) x, (int) y);
 		int mask = getMask(event);
 		bot.mousePress(mask);
 	}
 
-	private void mouseRelease(MouseEvent event) {
-		bot.mouseMove(event.getX(), event.getY());
+	private void mouseRelease(MouseEvent event, Dimension dim) {
+		double x = (event.getX()*screenSize.getWidth())/dim.getWidth();
+		double y = (event.getY()*screenSize.getHeight())/dim.getHeight();
+		bot.mouseMove((int) x, (int) y);
 		int mask = getMask(event);
 		bot.mouseRelease(mask);
 	}
 
-	private void mouseMove(MouseEvent event) {
-		bot.mouseMove(event.getX(), event.getY());
+	private void mouseMove(MouseEvent event, Dimension dim) {
+		double x = (event.getX()*screenSize.getWidth())/dim.getWidth();
+		double y = (event.getY()*screenSize.getHeight())/dim.getHeight();
+		bot.mouseMove((int) x, (int) y);
 	}
 	
-	private void mouseClick(MouseEvent event) {
-		bot.mouseMove(event.getX(), event.getY());
-		int mask = getMask(event);
-		bot.mousePress(mask);
-		bot.mouseRelease(mask);
+	private void mouseClick(MouseEvent event, Dimension dim) {
+		// Do nothing
 	}
 	
-	private void mouseScroll(MouseWheelEvent event) {
+	private void mouseScroll(MouseWheelEvent event, Dimension dim) {
 		bot.mouseWheel(event.getWheelRotation());
 	}
 
