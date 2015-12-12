@@ -11,7 +11,7 @@ public class Main {
 	public static void main(String[] args) {
 
 		PasswordGenerator passGen = new PasswordGenerator();
-		String password = passGen.password;
+		final String password = passGen.password;
 
 		new Thread(new RequestReceiver(Constants.port, password)).start();
 

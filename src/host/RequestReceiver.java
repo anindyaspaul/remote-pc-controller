@@ -87,7 +87,7 @@ public class RequestReceiver implements Runnable, ActionListener {
 			DataOutputStream dos = new DataOutputStream(socket.getOutputStream());
 			if (e.getSource() == btnAllowed) {
 				dos.writeInt(Constants.allowed);
-				new Thread(new ScreenSender(socket)).start();
+				new Thread(new ScreenSender(socket, currentFrame)).start();
 				new Thread(new ControlReceiver(socket)).start();
 				showCurrent();
 			} else if (e.getSource() == btnDenied) {
@@ -98,6 +98,7 @@ public class RequestReceiver implements Runnable, ActionListener {
 			}
 		} catch (Exception e2) {
 			System.out.println("Error in incoming request: " + e2);
+			currentFrame.frame.setVisible(false);
 		}
 		incomingFrame.frame.setVisible(false);
 	}

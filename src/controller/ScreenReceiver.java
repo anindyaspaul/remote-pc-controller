@@ -69,7 +69,7 @@ public class ScreenReceiver implements Runnable {
 		frame.getContentPane().add(imageLabel);
 		
 		frame.setSize(500, 500);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.setVisible(true);
 	}
 }
