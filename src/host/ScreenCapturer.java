@@ -9,8 +9,12 @@ public class ScreenCapturer {
 
 	Robot robot;
 
-	public ScreenCapturer() throws Exception {
-		robot = new Robot();
+	public ScreenCapturer() {
+		try {
+			robot = new Robot();
+		} catch (Exception e) {
+			System.out.println("Error in creating robot: " + e);
+		}
 	}
 
 	BufferedImage capture() {

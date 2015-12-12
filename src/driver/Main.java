@@ -8,10 +8,10 @@ import utilities.Constants;
 
 public class Main {
 
-	public static void main(String[] args) throws Exception {
+	public static void main(String[] args) {
 
-		PasswordGenerator pass = new PasswordGenerator();
-		String password = pass.password;
+		PasswordGenerator passGen = new PasswordGenerator();
+		String password = passGen.password;
 
 		new Thread(new RequestReceiver(Constants.port, password)).start();
 

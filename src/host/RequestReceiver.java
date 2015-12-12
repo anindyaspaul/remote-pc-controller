@@ -24,8 +24,13 @@ public class RequestReceiver implements Runnable, ActionListener {
 	JButton btnDiscon;
 	Socket socket;
 
-	public RequestReceiver(int port, String password) throws Exception {
+	public RequestReceiver(int port, String password) {
+		try {
 		serverSocket = new ServerSocket(port);
+		} catch(Exception e) {
+			System.out.println("Couldn't create server socket");
+			System.exit(1);
+		}
 		this.password = password;
 		this.btnAllowed = new JButton("Allow");
 		this.btnAllowed.addActionListener(this);
@@ -43,23 +48,25 @@ public class RequestReceiver implements Runnable, ActionListener {
 			try {
 				socket = serverSocket.accept();
 				authenticate();
-				// new Thread(new ScreenSender(socket)).start();
-				// new Thread(new ControlReceiver(socket)).start();
 			} catch (Exception e) {
 				System.out.println(e);
 			}
 		}
 	}
 
-	void authenticate() throws Exception {
-		DataInputStream dis = new DataInputStream(socket.getInputStream());
-		DataOutputStream dos = new DataOutputStream(socket.getOutputStream());
+	void authenticate() {
+		try {
+			DataInputStream dis = new DataInputStream(socket.getInputStream());
+			DataOutputStream dos = new DataOutputStream(socket.getOutputStream());
 
-		String ret = dis.readUTF();
-		if (ret.compareTo(password) == 0) {
-			showIncoming();
-		} else {
-			dos.writeInt(Constants.mismatch);
+			String ret = dis.readUTF();
+			if (ret.compareTo(password) == 0) {
+				showIncoming();
+			} else {
+				dos.writeInt(Constants.mismatch);
+			}	
+		} catch (Exception e) {
+			System.out.println("Error in authentication: " + e);
 		}
 	}
 
@@ -90,7 +97,7 @@ public class RequestReceiver implements Runnable, ActionListener {
 				socket.close();
 			}
 		} catch (Exception e2) {
-			System.out.println(e2);
+			System.out.println("Error in incoming request: " + e2);
 		}
 		incomingFrame.frame.setVisible(false);
 	}

@@ -20,8 +20,9 @@ public class ControlReceiver implements Runnable {
 
 	@Override
 	public void run() {
-		while (true) {
-			try {
+		try {
+			while (true) {
+
 				GenericEvent event = null;
 				event = (GenericEvent) ois.readObject();
 
@@ -37,10 +38,9 @@ public class ControlReceiver implements Runnable {
 					keyPress(event.getKeyValue());
 				if (event.getValue() == GenericEvent.KEY_RELEASED)
 					keyRelease(event.getKeyValue());
-
-			} catch (Exception e) {
-				System.out.println(e);
 			}
+		} catch (Exception e) {
+			System.out.println("Error in receiving event: " + e);
 		}
 	}
 
@@ -57,12 +57,12 @@ public class ControlReceiver implements Runnable {
 		int mask = getMask(event);
 		bot.mouseRelease(mask);
 	}
-	
+
 	private void mouseMove(MouseEvent event) {
 		System.out.println("mouse moved " + event.getX() + " " + event.getY());
 		bot.mouseMove(event.getX(), event.getY());
 	}
-	
+
 	private void mouseClick(MouseEvent event) {
 		System.out.println(event.getX() + " " + event.getY());
 		bot.mouseMove(event.getX(), event.getY());
@@ -80,7 +80,7 @@ public class ControlReceiver implements Runnable {
 		System.out.println(keycode);
 		bot.keyRelease(keycode);
 	}
-	
+
 	private int getMask(MouseEvent event) {
 		int mask = 0;
 		if (event.getButton() == MouseEvent.BUTTON1)

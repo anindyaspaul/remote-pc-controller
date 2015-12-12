@@ -13,7 +13,7 @@ public class ScreenSender implements Runnable {
 	Socket socket;
 	ScreenCapturer screenCapturer;
 
-	public ScreenSender(Socket socket) throws Exception {
+	public ScreenSender(Socket socket) {
 		this.socket = socket;
 		this.screenCapturer = new ScreenCapturer();
 	}
@@ -30,10 +30,10 @@ public class ScreenSender implements Runnable {
 				byte[] imageData = baos.toByteArray();
 				dos.writeInt(imageData.length);
 				dos.write(imageData);
-				Thread.sleep(10);
+				Thread.sleep(40);
 			}	
 		} catch (Exception e) {
-			System.out.println(e);
+			System.out.println("Error in screen sender: " + e);
 		}
 	}
 }

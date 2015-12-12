@@ -75,15 +75,7 @@ public class ControlSender implements Runnable, MouseListener, MouseMotionListen
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		// Nothing to do
-		// System.out.println("Mouse Clicked " + e.getX() + " " + e.getY());
-		//
-		// GenericEvent event = new GenericEvent(GenericEvent.MOUSE_CLICKED, e);
-		// try {
-		// oos.writeObject(event);
-		// } catch (Exception e2) {
-		// System.out.println(e2);
-		// }
+		// Do nothing
 	}
 
 	@Override
