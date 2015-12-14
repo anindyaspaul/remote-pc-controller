@@ -30,8 +30,8 @@
       <section>
         <p>With the Remote PC Controller, you can easily control someone's PC from your own if both of them are connected via LAN and the other user gives you permission to do so. The project is the result of an educational effort to make a replica of the popular software TeamViewer.</p>
 
-<h1>
-<a id="how-to-use" class="anchor" href="#how-to-use" aria-hidden="true"><span class="octicon octicon-link"></span></a>How to use:</h1>
+<h2>
+<a id="how-to-use" class="anchor" href="#how-to-use" aria-hidden="true"><span class="octicon octicon-link"></span></a>How to use</h2>
 
 <ul>
 <li>Download the latest release from <a href="https://github.com/AnindyaPaul/remote-pc-controller/releases">remote-pc-controller/releases</a>.</li>
@@ -41,6 +41,17 @@
 <li>Click connect and wait for the other user to accept.</li>
 <li>Control using the control window.</li>
 </ul>
+
+<p>Typical home users can test this program by having two computers connected to the same router.</p>
+
+<h2>
+<a id="how-it-works" class="anchor" href="#how-it-works" aria-hidden="true"><span class="octicon octicon-link"></span></a>How it works</h2>
+
+<p>There are two major parts of the application. One is that it can be the controller of another PC and the other one is that it can be the controlled PC. So it either sends control request to another PC or wait for incoming request to accept and give control to someone else.</p>
+
+<p>When one user sends a request to another user, as the request gets accepted, a TCP connection is created between the two. Then two threads are created. The controller uses the two threads to receive screen and send control signals. The one being controlled uses the two threads to send screen and receive control signals.</p>
+
+<p>The controller gets screenshots from the host PC. Controller has mouse and keyboard listeners implemented. So it listens to events happening on the screenshot sent by the host. As any event occurs, the controller sends that event over the TCP connection to the host PC. The control receiver at the host end has a robot (java.awt.Robot) which then emulates the received events. In the mean time, another robot is continuously taking screenshots of the host and sending them over to the controller.</p>
       </section>
       <footer>
         <p>This project is maintained by <a href="https://github.com/AnindyaPaul">AnindyaPaul</a></p>
