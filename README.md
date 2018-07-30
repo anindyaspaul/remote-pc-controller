@@ -1,4 +1,4 @@
-# Remote PC Controller [Educational Project]
+# Remote PC Controller [Academic Project]
 
 - Teamviewer replica, control one PC from another remotely through GUI
 - Built on top of TCP protocol using Java Sockets
